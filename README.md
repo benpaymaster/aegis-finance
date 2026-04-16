@@ -59,9 +59,8 @@ Aegis provides a **DeFi-native bridge** for the individual. By using the **Pacif
 
 ### 1\. Setup Environment
 
-Bash
+```Bash
 
-```
 git clone https://github.com/benpaymaster/aegis-finance.git
 cd aegis-finance
 python3 -m venv venv
@@ -76,9 +75,9 @@ Aegis uses environment variables for security. Do not hardcode keys into the scr
 
 1.  Create a `.env` file from the template:
 
-    Bash
 
-    ```
+    ```Bash
+
     cp .env.example .env
 
     ```
@@ -97,18 +96,18 @@ Aegis uses environment variables for security. Do not hardcode keys into the scr
 
 **To start the live Guardian Engine:**
 
-Bash
 
-```
+```Bash
+
 python pacifica_hedge.py
 
 ```
 
 **To run the Market Crash Simulation (Demo Mode):**
 
-Bash
 
-```
+```Bash
+
 python simulate_crash.py
 
 ```
