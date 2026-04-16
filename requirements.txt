@@ -15,6 +15,7 @@ pacifica-sdk==0.1.0
 propcache==0.4.1
 pydantic==2.13.1
 pydantic_core==2.46.1
+python-dotenv==1.2.2
 requests==2.33.1
 solders==0.27.1
 typing-inspection==0.4.2
