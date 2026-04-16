@@ -52,9 +52,7 @@ pip install -r requirements.txt
 
 Set your `AGENT_SECRET` in `pacifica_hedge.py` and execute:
 
-Bash
-
-```
+```bash
 # Start the Guardian Engine
 python pacifica_hedge.py
 
