@@ -1,47 +1,109 @@
-# 🛡️ Aegis: The Social Equity Shield
-**Protecting UK Tenant Deposits via Pacifica Perpetual Hedging**
+🛡️ Aegis: The Social Equity Shield
+===================================
 
-## 📌 The Problem: The "Lease Option" Trap
-In the UK, thousands of residents use **Purchase Lease Options (PLOs)** to get on the housing ladder. These tenants pay a significant upfront "option fee" (e.g., £10,000) for the right to buy a home at a fixed price in the future.
+**Protecting Global Property Equity via Pacifica Perpetual Hedging**
 
-**The Invisible Risk:**
-Lease options are effectively **20x leveraged positions** on physical property. 
-* If a house in Leeds worth £200,000 drops just **5%** in value, the property is now worth £190,000. 
-* The tenant’s entire £10,000 deposit is **wiped out** in negative equity. 
-* High-street banks offer no protection for this specific niche.
+🌍 The Problem: A Global "Equity Wipeout" Risk
+----------------------------------------------
 
-## 🚀 The Solution: Aegis
-Aegis is an automated "Headless" hedging engine built on the **Pacifica SDK**. It monitors real-world property indices and uses DeFi liquidity to provide a digital safety net for physical home-buyers.
+While Aegis is being piloted in Leeds, UK, the problem is global. Whether it's **Purchase Lease Options (UK)**, **Rent-to-Own (USA)**, or **Off-plan Deposits (Global)**, millions of aspirational homeowners face the same "Leverage Trap":
+
+-   **The Invisible Risk:** A buyer locks in a price with a 5-10% deposit. Because they do not yet hold the deed, a small market correction (e.g., 5%) wipes out **100% of their life savings.**
+
+-   **The Gap:** Traditional insurance and banks do not protect against "Negative Equity" for non-deeded occupiers.
+
+🚀 The Solution: Aegis
+----------------------
+
+Aegis is an automated "Headless" hedging engine built on the **Pacifica SDK**. It bridges physical real estate and DeFi liquidity to provide a digital safety net.
 
 ### Key Features:
-* **Autonomous Oracle Monitoring:** Watches local property market data for volatility thresholds.
-* **Delta-Neutral Hedging:** Automatically opens a 5x Short on Pacifica (SOL-PERP) when a 2% price drop is detected.
-* **Agent-Key Security:** Uses Pacifica's Ed25519 "Agent Wallet" architecture to sign programmatic trades without exposing main account funds.
-* **Social Impact:** Offsets physical equity loss with DeFi trading profits, keeping the tenant's deposit "whole."
 
-## 🛠️ Tech Stack
-* **Engine:** Python 3.10+
-* **DEX:** Pacifica Testnet (Perpetual Protocol)
-* **Auth:** Ed25519 Agent Signing
-* **Environment:** Virtualized Python Environment (venv)
+-   **Autonomous Oracle Monitoring:** Watches property market data (Leeds Index, Case-Shiller, etc.) for volatility.
 
-## 🏃 Quick Start
-1. **Activate Environment:** `source venv/bin/activate`
-2. **Configure Keys:** Update `pacifica_hedge.py` with your Agent Secret.
-3. **Execute Shield:** `python pacifica_hedge.py`
+-   **Delta-Neutral Hedging:** Automatically opens a 5x Short on Pacifica (SOL-PERP) when a price drop is detected.
 
-## 📊 The Math
-| Market Scenario | Physical Equity Change | Pacifica Hedge Result | Net Position |
-| :--- | :--- | :--- | :--- |
+-   **Agent-Key Security:** Uses Pacifica's Ed25519 "Agent Wallet" architecture for secure, programmatic signing.
+
+* * * * *
+
+🛠️ Tech Stack & Requirements
+-----------------------------
+
+-   **Python 3.10+**
+
+-   **Pacifica SDK**
+
+-   **Active Internet Connection** (for Testnet API calls)
+
+🏃 Installation & How to Run
+----------------------------
+
+### 1\. Clone & Setup
+
+First, clone the repository and navigate into the project folder:
+```bash
+git clone [https://github.com/benpaymaster/aegis-finance.git](https://github.com/benpaymaster/aegis-finance.git)
+cd aegis-finance
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+```
+
+### 2\. Configuration
+
+Open `pacifica_hedge.py` and ensure your **Agent Keys** are set:
+
+Python
+
+```
+AGENT_SECRET = "YOUR_KEY"
+MAIN_ACCOUNT = "YOUR_WALLET"
+
+```
+
+### 3\. Execution
+
+**To run the main hedge engine:**
+
+Bash
+
+```
+python pacifica_hedge.py
+
+```
+
+**To run the Market Crash Simulation (for Demo purposes):**
+
+Bash
+
+```
+python simulate_crash.py
+
+```
+
+* * * * *
+
+📊 The Math (Leeds Pilot Example)
+---------------------------------
+
+| **Market Scenario** | **Physical Equity Change** | **Pacifica Hedge Result** | **Net Position** |
+| --- | --- | --- | --- |
 | **Stable Market** | £0 | No Trade | **Protected** |
-| **-2.5% Leeds Dip** | -£5,000 | +£5,000 (Short Profit) | **Hedged (Total £10k)** |
+| **-5% Market Crash** | -£10,000 | +£10,000 (Short Profit) | **Hedged (Total £10k)** |
 
-## 📖 Lexicon (Glossary)
-* **PLO (Purchase Lease Option):** A legal contract where a tenant pays for the right to buy a property at a set price in the future.
-* **Option Fee:** The upfront capital paid by the tenant. In Aegis, this is the "at-risk" asset we are protecting.
-* **Delta-Neutral:** A strategy where the loss in one asset (Property) is offset by an equal gain in another (Pacifica Short).
-* **Agent Key:** A restricted cryptographic key that allows Aegis to trade autonomously without needing the user's main private key for every transaction.
-* **Oracle:** The data bridge that brings real-world Leeds house price indices into the Aegis execution engine.
+📖 Lexicon (Glossary)
+---------------------
 
----
+-   **PLO / Rent-to-Own:** Contracts where a tenant pays for the future right to buy a property.
+
+-   **Option Fee:** The upfront capital (deposit) at risk of being wiped out by market dips.
+
+-   **Delta-Neutral:** Offsetting physical asset loss with an equal gain in a DeFi position.
+
+-   **Agent Key:** A restricted key for automated trading via Pacifica.
+
+* * * * *
+
 *Built for the Pacifica x DoraHacks 2026 Hackathon.*
