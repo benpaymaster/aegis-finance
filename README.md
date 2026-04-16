@@ -1,109 +1,68 @@
-🛡️ Aegis: The Social Equity Shield
-===================================
 
-**Protecting Global Property Equity via Pacifica Perpetual Hedging**
+# 🛡️ Aegis: The Social Equity Shield
+**Combatting the Global Housing Crisis via Pacifica Perpetual Hedging**
 
-🌍 The Problem: A Global "Equity Wipeout" Risk
-----------------------------------------------
+## 📌 The Macro Crisis: "Generation Locked-Out"
+As of April 2026, the global housing market has reached a point of systemic exclusion. Aegis was built in response to the "98% Trap"---a reality where the traditional "save and buy" model has fundamentally collapsed for the current generation.
 
-While Aegis is being piloted in Leeds, UK, the problem is global. Whether it's **Purchase Lease Options (UK)**, **Rent-to-Own (USA)**, or **Off-plan Deposits (Global)**, millions of aspirational homeowners face the same "Leverage Trap":
+### 📊 The Data of Exclusion (2025-2026):
+* **The 98% Trap:** 98% of adults living with parents are priced out of their local markets ([Mortgage Soup](https://mortgagesoup.co.uk/millions-of-adults-trapped-at-home-as-98-priced-out-of-first-homes/)).
+* **The 56-Year Wait:** A single earner in London now faces an impossible 56-year wait to save for a deposit ([Generation Rent](https://www.generationrent.org/2025/12/02/single-londoners-face-56-year-wait-to-buy-a-home/)).
+* **Generation Locked-Out:** From Sydney to Tokyo, homeownership rates for under-35s have plummeted. In Tokyo, a condo costs **15x the average salary** ([Worldcrunch](https://worldcrunch.com/business-finance/young-people-homeowners/)).
+* **The Valuation Gap:** In the UK, high house prices and high debt mean millions of aspiring owners rely on government funding or alternative paths like **Purchase Lease Options (PLOs)** ([The Times](https://www.thetimes.com/uk/politics/article/young-first-time-buyers-struggle-uk-mortgages-lv25vc3bj)).
 
--   **The Invisible Risk:** A buyer locks in a price with a 5-10% deposit. Because they do not yet hold the deed, a small market correction (e.g., 5%) wipes out **100% of their life savings.**
+## 🚀 The Solution: Aegis
+Traditional finance and "light-touch" state involvement have failed. While cities like **Salford and Shanghai** are experimenting with state-led housing ([University of Manchester](https://www.manchester.ac.uk/about/news/from-salford-to-shanghai/)), Aegis provides a **DeFi-native bridge** for the individual.
 
--   **The Gap:** Traditional insurance and banks do not protect against "Negative Equity" for non-deeded occupiers.
-
-🚀 The Solution: Aegis
-----------------------
-
-Aegis is an automated "Headless" hedging engine built on the **Pacifica SDK**. It bridges physical real estate and DeFi liquidity to provide a digital safety net.
+Aegis uses the **Pacifica SDK** to protect the only path left for many: The "Price Lock" in alternative purchase agreements.
 
 ### Key Features:
+* **Global Oracle Integration:** Monitors volatility in housing indices across major global hubs.
+* **The Mortgage Bridge:** When property values dip, Aegis automatically opens a Short on Pacifica (SOL-PERP). The profit generated provides the **"Cash Bridge"** needed to complete a purchase when a bank's valuation falls below the contract's fixed price.
+* **Agent-Key Security:** Leverages Pacifica's **Ed25519 Agent Keys** to allow the engine to manage protection autonomously without exposing the user's primary capital.
 
--   **Autonomous Oracle Monitoring:** Watches property market data (Leeds Index, Case-Shiller, etc.) for volatility.
+---
 
--   **Delta-Neutral Hedging:** Automatically opens a 5x Short on Pacifica (SOL-PERP) when a price drop is detected.
+## 📊 The Math: Saving the Deal
+| Market Scenario | Property Value | Bank Valuation | Pacifica Hedge Profit | Final Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Contract Start** | £200,000 | £200,000 | £0 | **Active** |
+| **Market Dip (5%)** | £190,000 | £190,000 | **+£10,000** | **Deal Saved via Aegis** |
 
--   **Agent-Key Security:** Uses Pacifica's Ed25519 "Agent Wallet" architecture for secure, programmatic signing.
+---
 
-* * * * *
+## 🛠️ Tech Stack
+* **Engine:** Python 3.10+
+* **DEX:** Pacifica Testnet (Perpetual Protocol)
+* **Security:** Ed25519 Agent Signing
+* **Dependencies:** `pacifica-sdk`, `cryptography`
 
-🛠️ Tech Stack & Requirements
------------------------------
+## 🏃 Installation & Execution
 
--   **Python 3.10+**
-
--   **Pacifica SDK**
-
--   **Active Internet Connection** (for Testnet API calls)
-
-🏃 Installation & How to Run
-----------------------------
-
-### 1\. Clone & Setup
-
-First, clone the repository and navigate into the project folder:
+### 1. Setup
 ```bash
-git clone [https://github.com/benpaymaster/aegis-finance.git](https://github.com/benpaymaster/aegis-finance.git)
+git clone https://github.com/benpaymaster/aegis-finance.git
 cd aegis-finance
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
 ```
 
-### 2\. Configuration
+### 2\. Configure & Run
 
-Open `pacifica_hedge.py` and ensure your **Agent Keys** are set:
-
-Python
-
-```
-AGENT_SECRET = "YOUR_KEY"
-MAIN_ACCOUNT = "YOUR_WALLET"
-
-```
-
-### 3\. Execution
-
-**To run the main hedge engine:**
+Set your `AGENT_SECRET` in `pacifica_hedge.py` and execute:
 
 Bash
 
 ```
+# Start the Guardian Engine
 python pacifica_hedge.py
 
-```
-
-**To run the Market Crash Simulation (for Demo purposes):**
-
-Bash
-
-```
+# Test a global market crash simulation
 python simulate_crash.py
 
 ```
 
 * * * * *
 
-📊 The Math (Leeds Pilot Example)
----------------------------------
-
-| **Market Scenario** | **Physical Equity Change** | **Pacifica Hedge Result** | **Net Position** |
-| --- | --- | --- | --- |
-| **Stable Market** | £0 | No Trade | **Protected** |
-| **-5% Market Crash** | -£10,000 | +£10,000 (Short Profit) | **Hedged (Total £10k)** |
-
-📖 Lexicon (Glossary)
----------------------
-
--   **PLO / Rent-to-Own:** Contracts where a tenant pays for the future right to buy a property.
-
--   **Option Fee:** The upfront capital (deposit) at risk of being wiped out by market dips.
-
--   **Delta-Neutral:** Offsetting physical asset loss with an equal gain in a DeFi position.
-
--   **Agent Key:** A restricted key for automated trading via Pacifica.
-
-* * * * *
-
-*Built for the Pacifica x DoraHacks 2026 Hackathon.*
+*Built for the Pacifica x DoraHacks 2026 Hackathon. Protecting futures from Leeds to the World.*
