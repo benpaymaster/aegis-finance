@@ -38,5 +38,5 @@ class AegisStrategy:
 if __name__ == "__main__":
     aegis = AegisStrategy()
     print(f"Strategy Start: {aegis.base_asset} Base | {aegis.tenor} Lock")
-    print(f"Leverage on Signal(100.0): {aegis.get_alpha_signal(100.0)}x")
+    print(f"Leverage on Signal(85.0): {aegis.get_alpha_signal(85.0)}x")
     print(f"Projected Net APY: {aegis.calculate_projected_apy(0.00002) * 100:.2f}%")
